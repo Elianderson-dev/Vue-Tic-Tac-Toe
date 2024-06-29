@@ -65,7 +65,7 @@ const resetGame = () => {
               :key="y"
               @click="makeMove(x, y)"
               :class="`border border-white w-20 h-20 hover:bg-gray-700 flex 
-              items-center justify-center material-icons-outlined text-4xl cursor-pointer`">
+              items-center justify-center material-icons-outlined text-4xl cursor-pointer ${ cell === 'X' ? 'text-red-500' : 'text-blue-500'}`">
               {{ cell === 'X' ? 'close' : cell === 'O' ? 'circle' : '' }}
 
           </div>

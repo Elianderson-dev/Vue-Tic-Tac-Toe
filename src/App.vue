@@ -71,6 +71,10 @@ const resetGame = () => {
           </div>
       </div>
     </div>
+
+    <h2 v-if="winner" class="text-6-l fond-bold mb-8">Player '{{ winner }} wins!'</h2>
+
+    <button @click="resetGame" class="px-4 py-2 bg-red-500 rounded uppercase font-bold hover:bg-red-600 duration-300">Reset Game</button>
   </main>
 </template>
 

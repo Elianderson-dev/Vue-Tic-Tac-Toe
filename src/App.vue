@@ -29,8 +29,25 @@ const calculateWinner = (squares) => {
 
 const winner = computed(() => calculateWinner(board.value.flat))
 
+const makeMove = (x, y) => {
+  if (winner.value) return
+  
+  if (board.value[x][y] !== '') = return
 
-</script>
+  board.value[x][y] = player.value
+  
+  player.value = player.value === 'X' ? 'O' : 'X'
+}
+
+const resetGame = () => {
+  board.value = [
+    ['','',''],
+    ['','',''],
+    ['','','']
+  ]
+  player.value = 'X'
+}
+</script> 
 
 <template>
 

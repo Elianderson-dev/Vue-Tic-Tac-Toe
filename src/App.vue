@@ -27,7 +27,7 @@ const calculateWinner = (squares) => {
   return null;
 }
 
-const winner = computed(() => calculateWinner(board.value.flat))
+const winner = computed(() => calculateWinner(board.value.flat()))
 
 const makeMove = (x, y) => {
   if (winner.value) return
@@ -67,12 +67,11 @@ const resetGame = () => {
               :class="`border border-white w-20 h-20 hover:bg-gray-700 flex 
               items-center justify-center material-icons-outlined text-4xl cursor-pointer ${ cell === 'X' ? 'text-red-500' : 'text-blue-500'}`">
               {{ cell === 'X' ? 'close' : cell === 'O' ? 'circle' : '' }}
-
           </div>
       </div>
     </div>
 
-    <h2 v-if="winner" class="text-6-l fond-bold mb-8">Player '{{ winner }} wins!'</h2>
+    <h2 v-if="winner" class="text-6xl font-bold mb-8">Player '{{ winner }}'  wins!</h2>
 
     <button @click="resetGame" class="px-4 py-2 bg-red-500 rounded uppercase font-bold hover:bg-red-600 duration-300">Reset Game</button>
   </main>
